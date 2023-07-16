@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <title>restapi lab - crypto</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Results ranked by marketplace</h1>
+<a href="/currencies">Home</a>
+<a href="/currencies/form">Back to the form</a>
+
+<div>
+    <div th:text="'Found: '+${currenciesAmount}+' results'"></div>
+    <div th:text="'Value Currency: '+${vc}"></div>
+</div>
+
+<ul th:each="currency : ${currencies}" style="border-bottom-style: dotted">
+    <li style="list-style-type: none" >
+        <div th:text="${currency.name}"></div>
+        <div th:text="'Current value: '+${currency.price}"></div>
+        <div th:text="'Price percentage change in the last 24h: '+${currency.priceChangePercentage24h}+'%'"></div>
+        <div>Rankings: </div>
+        <div th:text="'- price: '+${currency.priceRank}"></div>
+        <div th:text="'- price change % in the 24h: '+${currency.priceChangePercentage24hRank}"></div>
+    </li>
+</ul>
+</body>
+</html>
