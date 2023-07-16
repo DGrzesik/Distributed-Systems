@@ -1,2 +1,2 @@
 # Distributed-Systems
- Budowa i implementacja systemów działających w rozproszonym środowisku sieciowym.
+ Structures and implementations of systems in distributed network environment.
