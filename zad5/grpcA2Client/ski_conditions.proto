@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+option java_outer_classname = "SkiConditionsProto";
+option java_multiple_files = true;
+option java_package = "gen";
+
+service SkiConditions {
+  rpc SubscribeSkiConditions(SkiConditionsSubscription) returns (stream Conditions);
+}
+
+message SkiConditionsSubscription {
+  repeated string resorts = 1;
+  int32 clientID = 2;
+}
+
+
+message Conditions {
+  string resort = 1;
+  float temperature = 2;
+  float wind_speed = 3;
+  bool is_night = 4;
+  repeated Sky sky = 5;
+  repeated Slope slope = 6;
+}
+message Sky{
+  Clouds clouds= 1;
+  Precipitation precipitation = 2;
+}
+enum Precipitation{
+  NONE = 0;
+  SNOWFALL = 1;
+  RAIN = 2;
+  HAIL = 3;
+}
+enum Clouds {
+  CLEAR = 0;
+  FEW_CLOUDS = 1;
+  PARTIALLY_CLOUDY = 2;
+  CLOUDY = 3;
+  FULLY_CLOUDED = 4;
+}
+message Slope{
+  int32 snow_level = 1;
+  Snow snow = 2;
+}
+enum Snow {
+  CORDUROY_SNOW = 0;
+  POWDER = 1;
+  ICE = 2;
+  WET_SNOW = 3;
+  COMPACTED_SNOW = 4;
+}
