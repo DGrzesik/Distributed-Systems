@@ -1,2 +1,2 @@
 # Distributed-Systems
-Systemy Rozproszone
+ Budowa i implementacja systemów działających w rozproszonym środowisku sieciowym.
