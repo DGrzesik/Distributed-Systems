@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>restapi lab - crypto</title>
+</head>
+<body>
+
+    <form action="#" th:action="@{/currencies/results}" method="GET">
+        <p>Name: <input type="text" th:name="name" placeholder="Currency name..."  /></p>
+        <p>Amount: <input type="number" th:name="amt" placeholder="1 to 250..."  /></p>
+        <label th:for="vc">You must to choose value currency!</label>
+        <p>Value Currency:
+            <input  type="text" th:name="vc" placeholder="usd,eur,jpy,pln..."/>
+        </p>
+
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+    <a href="/currencies">Home</a>
+
+</body>
+</html>
